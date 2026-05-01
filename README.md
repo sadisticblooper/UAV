@@ -10,6 +10,8 @@
 Built using .NET 10 MAUI and Blazor, UAV gives you a desktop-grade asset ripping and viewing experience optimized for touch screens, complete with native Android file system integrations.
 
 ![Fields Preview](Readme_assets/Fields_preview.jpg)
+![Fields Preview](Readme_assets/Mesh_preview.jpg)
+![Fields Preview](Readme_assets/Texture_preview.jpg)
 
 ## Android-First Features
 
