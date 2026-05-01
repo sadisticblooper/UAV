@@ -22,10 +22,9 @@ Built using .NET 10 MAUI and Blazor, UAV gives you a desktop-grade asset ripping
 * **Bulk Export:** Export all filtered assets at once into a single `.zip` archive.
 
 ## Preview
-
-![Fields Preview](Readme_assets/Fields_preview.jpg)
-![Fields Preview](Readme_assets/Mesh_preview.jpg)
-![Fields Preview](Readme_assets/Texture_preview.jpg)
+<img src="Readme_assets/Fields_preview.jpg" alt="Fields Preview" width="670" height="400">
+<img src="Readme_assets/Mesh_preview.jpg" alt="Mesh Preview" width="670" height="400">
+<img src="Readme_assets/Texture_preview.jpg" alt="Texture Preview" width="670" height="400">
 
 ##  How to Build (GitHub Actions Workflow)
 
