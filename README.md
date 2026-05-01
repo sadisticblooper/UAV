@@ -9,6 +9,8 @@
 
 Built using .NET 10 MAUI and Blazor, UAV gives you a desktop-grade asset ripping and viewing experience optimized for touch screens, complete with native Android file system integrations.
 
+![Fields Preview](Readme_assets/Fields_preview.jpg)
+
 ## Android-First Features
 
 * **Native Storage Access (SAF):** Seamlessly pick `.bundle` or `.assets` files, or grant permission to scan entire directories. UAV integrates deeply with Android's Storage Access Framework to handle files without crashing your device's memory.
