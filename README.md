@@ -50,7 +50,7 @@ If you want to modify the code and build locally:
 ## Credits
 * Developer: Nexora
 
-# UAV stands on the shoulders of giants. A huge thank you to the creators of the following libraries:
+### UAV stands on the shoulders of giants. A huge thank you to the creators of the following libraries:
 
 * Unity Parsing: AssetsTools.NET by Nesark1
 * Texture Decoding: AssetRipper.TextureDecoder
