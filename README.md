@@ -49,7 +49,7 @@ If you want to modify the code and build locally:
 
 ## Credits & Thanks
 * Developer: Nexora
-Discord: @ftw.sadistic
+; Discord: @ftw.sadistic
 
 UAV stands on the shoulders of giants. A huge thank you to the creators of the following libraries:
 
