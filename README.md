@@ -49,7 +49,11 @@ If you want to modify the code and build locally:
 
 ## Credits & Thanks
 Development & UI/UX: Nexora
+
 Discord: @ftw.sadistic
+
 UAV stands on the shoulders of giants. A huge thank you to the creators of the following libraries:
+
 Unity Parsing: AssetsTools.NET by Nesark1
+
 Texture Decoding: AssetRipper.TextureDecoder
