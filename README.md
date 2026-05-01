@@ -9,9 +9,6 @@
 
 Built using .NET 10 MAUI and Blazor, UAV gives you a desktop-grade asset ripping and viewing experience optimized for touch screens, complete with native Android file system integrations.
 
-![Fields Preview](Readme_assets/Fields_preview.jpg)
-![Fields Preview](Readme_assets/Mesh_preview.jpg)
-![Fields Preview](Readme_assets/Texture_preview.jpg)
 
 ## Android-First Features
 
@@ -24,7 +21,11 @@ Built using .NET 10 MAUI and Blazor, UAV gives you a desktop-grade asset ripping
 * **Deep Field Inspector:** Dive into the raw serialized data of any asset with a collapsible JSON-like tree view.
 * **Bulk Export:** Export all filtered assets at once into a single `.zip` archive.
 
+## Preview
 
+![Fields Preview](Readme_assets/Fields_preview.jpg)
+![Fields Preview](Readme_assets/Mesh_preview.jpg)
+![Fields Preview](Readme_assets/Texture_preview.jpg)
 
 ##  How to Build (GitHub Actions Workflow)
 
