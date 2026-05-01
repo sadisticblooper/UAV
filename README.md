@@ -48,12 +48,10 @@ If you want to modify the code and build locally:
    dotnet build -t:Run -f net10.0-android
 
 ## Credits & Thanks
-Development & UI/UX: Nexora
-
+* Developer: Nexora
 Discord: @ftw.sadistic
 
 UAV stands on the shoulders of giants. A huge thank you to the creators of the following libraries:
 
-Unity Parsing: AssetsTools.NET by Nesark1
-
-Texture Decoding: AssetRipper.TextureDecoder
+* Unity Parsing: AssetsTools.NET by Nesark1
+* Texture Decoding: AssetRipper.TextureDecoder
