@@ -5,7 +5,7 @@ namespace UAV.Services;
 
 public static class MemoryGuard
 {
-    public const long ThresholdBytes = 400L * 1024 * 1024; // 800 MB
+    public const long ThresholdBytes = 400L * 1024 * 1024; // 400 MB
 
     public static long GetAvailableBytes()
     {

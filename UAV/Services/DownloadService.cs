@@ -6,12 +6,6 @@ namespace UAV.Services;
 
 public class DownloadService
 {
-    private readonly IJSRuntime _js;
-    
-    public DownloadService(IJSRuntime js)
-    {
-        _js = js;
-    }
 
     public static async Task SaveAndOpenFile(string filename, byte[] data, string mimeType)
     {

@@ -67,7 +67,7 @@ internal sealed class BundleSlot
                     for (int i = 0; i < count; i++)
                     {
                         try { OpenFiles[i] = OpenManager.LoadAssetsFileFromBundle(bundle, i); }
-                        catch { }
+                        catch (Exception ex) { System.Diagnostics.Debug.WriteLine($"[BundleRegistry] Failed to load sub-file {i}: {ex.Message}"); }
                     }
                     return subFileIndex >= 0 && subFileIndex < OpenFiles.Length
                         ? OpenFiles[subFileIndex] : null;
@@ -80,7 +80,7 @@ internal sealed class BundleSlot
                 for (int i = 0; i < fileCount; i++)
                 {
                     try { OpenFiles[i] = OpenManager.LoadAssetsFileFromBundle(bundleFile, i); }
-                    catch { }
+                    catch (Exception ex) { System.Diagnostics.Debug.WriteLine($"[BundleRegistry] Failed to load sub-file {i} in bundle: {ex.Message}"); }
                 }
             }
             return subFileIndex >= 0 && subFileIndex < OpenFiles.Length
@@ -94,7 +94,7 @@ internal sealed class BundleSlot
         _lock.Wait();
         try
         {
-            try { OpenManager?.UnloadAll(true); } catch { }
+            try { OpenManager?.UnloadAll(true); } catch (Exception ex) { System.Diagnostics.Debug.WriteLine($"[BundleRegistry] Release failed: {ex.Message}"); }
             OpenFiles   = Array.Empty<AssetsFileInstance?>();
             OpenManager = null;
         }
@@ -175,7 +175,7 @@ public sealed class BundleRegistry : IDisposable
                                 SkippedFontBundles.Add(displayName);
                                 return;
                             }
-                            catch { }
+                            catch (Exception ex) { System.Diagnostics.Debug.WriteLine($"[BundleRegistry] Failed to scan sub-file {i}: {ex.Message}"); }
                         }
                     }
                     finally { ms?.Dispose(); }
@@ -200,7 +200,7 @@ public sealed class BundleRegistry : IDisposable
                             SkippedFontBundles.Add(displayName);
                             return;
                         }
-                        catch { }
+                        catch (Exception ex) { System.Diagnostics.Debug.WriteLine($"[BundleRegistry] Failed to scan sub-file {i}: {ex.Message}"); }
                     }
                 }
             }
@@ -245,7 +245,7 @@ public sealed class BundleRegistry : IDisposable
         }
         finally
         {
-            try { mgr.UnloadAll(true); } catch { }
+            try { mgr.UnloadAll(true); } catch (Exception ex) { System.Diagnostics.Debug.WriteLine($"[BundleRegistry] Manager unload failed: {ex.Message}"); }
 
             _scansSinceLastGc++;
             if (_scansSinceLastGc >= 10)   // gc count here
@@ -285,7 +285,7 @@ public sealed class BundleRegistry : IDisposable
                     var probe = mgr.GetBaseField(af, info);
                     tc = (probe.TypeName ?? "Unknown", probe["m_Name"] is { IsDummy: false });
                 }
-                catch { tc = ("Unknown", false); }
+                catch (Exception ex) { System.Diagnostics.Debug.WriteLine($"[BundleRegistry] Type probe failed for {info.TypeId}: {ex.Message}"); tc = ("Unknown", false); }
                 typeCache[info.TypeId] = tc;
             }
 
@@ -304,7 +304,7 @@ public sealed class BundleRegistry : IDisposable
                     name = nameField.IsDummy ? "" : (nameField.AsString ?? "");
                     bf   = null!; // drop ref so GC can collect
                 }
-                catch { }
+                catch (Exception ex) { System.Diagnostics.Debug.WriteLine($"[BundleRegistry] Name field read failed: {ex.Message}"); }
 
                 if (++gcCounter % 2000 == 0)
                     GC.Collect(0, GCCollectionMode.Optimized, blocking: false);
